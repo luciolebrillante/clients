@@ -31,7 +31,7 @@ import { EmergencyAccessUpdateRequest } from "../models/request/emergency-access
 import { EventRequest } from "../models/request/event.request";
 import { GroupRequest } from "../models/request/group.request";
 import { IapCheckRequest } from "../models/request/iap-check.request";
-import { ApiTokenRequest } from "../models/request/identity-token/api-token.request";
+import { UserApiTokenRequest } from "../models/request/identity-token/user-api-token.request";
 import { PasswordTokenRequest } from "../models/request/identity-token/password-token.request";
 import { SsoTokenRequest } from "../models/request/identity-token/sso-token.request";
 import { TokenTwoFactorRequest } from "../models/request/identity-token/token-two-factor.request";
@@ -171,6 +171,7 @@ import {
 import { TwoFactorYubiKeyResponse } from "../models/response/two-factor-yubi-key.response";
 import { UserKeyResponse } from "../models/response/user-key.response";
 import { SendAccessView } from "../models/view/send-access.view";
+import { OrganizationApiTokenRequest } from "../models/request/identity-token/organization-api-token.request";
 
 export class ApiService implements ApiServiceAbstraction {
   private device: DeviceType;
@@ -206,7 +207,11 @@ export class ApiService implements ApiServiceAbstraction {
   // Auth APIs
 
   async postIdentityToken(
-    request: ApiTokenRequest | PasswordTokenRequest | SsoTokenRequest
+    request:
+      | UserApiTokenRequest
+      | OrganizationApiTokenRequest
+      | PasswordTokenRequest
+      | SsoTokenRequest
   ): Promise<IdentityTokenResponse | IdentityTwoFactorResponse | IdentityCaptchaResponse> {
     const headers = new Headers({
       "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
@@ -219,7 +224,7 @@ export class ApiService implements ApiServiceAbstraction {
     request.alterIdentityTokenHeaders(headers);
 
     const identityToken =
-      request instanceof ApiTokenRequest
+      request instanceof UserApiTokenRequest || request instanceof OrganizationApiTokenRequest
         ? request.toIdentityToken()
         : request.toIdentityToken(this.platformUtilsService.getClientType());
 
@@ -2271,13 +2276,23 @@ export class ApiService implements ApiServiceAbstraction {
 
     const appId = await this.appIdService.getAppId();
     const deviceRequest = new DeviceRequest(appId, this.platformUtilsService);
+    let tokenRequest: UserApiTokenRequest | OrganizationApiTokenRequest;
 
-    const tokenRequest = new ApiTokenRequest(
-      clientId,
-      clientSecret,
-      new TokenTwoFactorRequest(),
-      deviceRequest
-    );
+    if (!clientId.startsWith("user")) {
+      tokenRequest = new OrganizationApiTokenRequest(
+        clientId,
+        clientSecret,
+        new TokenTwoFactorRequest(),
+        deviceRequest
+      );
+    } else {
+      tokenRequest = new UserApiTokenRequest(
+        clientId,
+        clientSecret,
+        new TokenTwoFactorRequest(),
+        deviceRequest
+      );
+    }
 
     const response = await this.postIdentityToken(tokenRequest);
     if (!(response instanceof IdentityTokenResponse)) {

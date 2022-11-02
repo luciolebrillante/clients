@@ -26,8 +26,14 @@ export class SsoLogInCredentials {
   ) {}
 }
 
-export class ApiLogInCredentials {
-  readonly type = AuthenticationType.Api;
+export class UserApiLogInCredentials {
+  readonly type = AuthenticationType.UserApi;
+
+  constructor(public clientId: string, public clientSecret: string) {}
+}
+
+export class OrganizationApiLogInCredentials {
+  readonly type = AuthenticationType.OrganizationApi;
 
   constructor(public clientId: string, public clientSecret: string) {}
 }

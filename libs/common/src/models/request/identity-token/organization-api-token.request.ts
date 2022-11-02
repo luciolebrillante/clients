@@ -3,7 +3,7 @@ import { DeviceRequest } from "../device.request";
 import { TokenTwoFactorRequest } from "./token-two-factor.request";
 import { TokenRequest } from "./token.request";
 
-export class ApiTokenRequest extends TokenRequest {
+export class OrganizationApiTokenRequest extends TokenRequest {
   constructor(
     public clientId: string,
     public clientSecret: string,
@@ -16,7 +16,7 @@ export class ApiTokenRequest extends TokenRequest {
   toIdentityToken() {
     const obj = super.toIdentityToken(this.clientId);
 
-    obj.scope = this.clientId.startsWith("organization") ? "api.organization" : "api";
+    obj.scope = "api.organization";
     obj.grant_type = "client_credentials";
     obj.client_secret = this.clientSecret;
 

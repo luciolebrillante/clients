@@ -1,6 +1,7 @@
 export enum AuthenticationType {
   Password = 0,
   Sso = 1,
-  Api = 2,
+  UserApi = 2,
   Passwordless = 3,
+  OrganizationApi = 4,
 }
