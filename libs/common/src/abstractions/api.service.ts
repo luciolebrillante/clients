@@ -176,7 +176,11 @@ export abstract class ApiService {
   ) => Promise<any>;
 
   postIdentityToken: (
-    request: PasswordTokenRequest | SsoTokenRequest | UserApiTokenRequest | OrganizationApiTokenRequest
+    request:
+      | PasswordTokenRequest
+      | SsoTokenRequest
+      | UserApiTokenRequest
+      | OrganizationApiTokenRequest
   ) => Promise<IdentityTokenResponse | IdentityTwoFactorResponse | IdentityCaptchaResponse>;
   refreshIdentityToken: () => Promise<any>;
 
