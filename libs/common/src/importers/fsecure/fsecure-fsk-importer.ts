@@ -5,7 +5,7 @@ import { CipherView } from "../../models/view/cipher.view";
 import { BaseImporter } from "../baseImporter";
 import { Importer } from "../importer";
 
-import { FskEntry, FskEntryTypesEnum, FskFile } from "./types/fsecure-fsk-types";
+import { FskEntry, FskEntryTypesEnum, FskFile } from "./fsecure-fsk-types";
 
 export class FSecureFskImporter extends BaseImporter implements Importer {
   parse(data: string): Promise<ImportResult> {

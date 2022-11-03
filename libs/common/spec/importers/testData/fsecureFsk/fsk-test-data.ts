@@ -1,4 +1,4 @@
-import { FskFile } from "@bitwarden/common/importers/fsecureImporters/types/fsecure-fsk-types";
+import { FskFile } from "@bitwarden/common/importers/fsecure/fsecure-fsk-types";
 
 export const LoginTestEntry: FskFile = {
   data: {
