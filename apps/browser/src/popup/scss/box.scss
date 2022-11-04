@@ -91,6 +91,7 @@
     button.btn.primary {
       font-size: $font-size-base;
       padding: 7px 15px;
+      width: 100%;
 
       &:hover {
         @include themify($themes) {
