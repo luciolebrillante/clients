@@ -17,9 +17,11 @@ import { AuthenticationStatus } from "../enums/authenticationStatus";
 import { AuthenticationType } from "../enums/authenticationType";
 import { KdfType } from "../enums/kdfType";
 import { KeySuffixOptions } from "../enums/keySuffixOptions";
+import { OrganizationApiLogInStrategy } from "../misc/logInStrategies/organizationApiLogin.strategy";
 import { PasswordLogInStrategy } from "../misc/logInStrategies/passwordLogin.strategy";
 import { PasswordlessLogInStrategy } from "../misc/logInStrategies/passwordlessLogin.strategy";
 import { SsoLogInStrategy } from "../misc/logInStrategies/ssoLogin.strategy";
+import { UserApiLogInStrategy } from "../misc/logInStrategies/userApiLogin.strategy";
 import { AuthResult } from "../models/domain/auth-result";
 import {
   UserApiLogInCredentials,
@@ -33,8 +35,6 @@ import { TokenTwoFactorRequest } from "../models/request/identity-token/token-tw
 import { PreloginRequest } from "../models/request/prelogin.request";
 import { ErrorResponse } from "../models/response/error.response";
 import { AuthRequestPushNotification } from "../models/response/notification.response";
-import { UserApiLogInStrategy } from "../misc/logInStrategies/userapilogin.strategy";
-import { OrganizationApiLogInStrategy } from "../misc/logInStrategies/organizationapilogin.strategy";
 
 const sessionTimeoutLength = 2 * 60 * 1000; // 2 minutes
 

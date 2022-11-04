@@ -12,7 +12,7 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
-import { UserApiLogInStrategy } from "@bitwarden/common/misc/logInStrategies/userapilogin.strategy";
+import { UserApiLogInStrategy } from "@bitwarden/common/misc/logInStrategies/userApiLogin.strategy";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { UserApiLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
 
