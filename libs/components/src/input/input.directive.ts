@@ -45,8 +45,7 @@ export class BitInputDirective implements BitFormFieldControl {
     return this.hasError ? true : undefined;
   }
 
-  // eslint-disable-next-line @typescript-eslint/explicit-member-accessibility
-  @HostBinding() @Input() public type: "text" | "password";
+  @HostBinding() @Input() type: "text" | "password";
 
   @HostBinding()
   @Input()
