@@ -17,11 +17,11 @@ import { AuthenticationStatus } from "../enums/authenticationStatus";
 import { AuthenticationType } from "../enums/authenticationType";
 import { KdfType } from "../enums/kdfType";
 import { KeySuffixOptions } from "../enums/keySuffixOptions";
-import { OrganizationApiLogInStrategy } from "../misc/logInStrategies/organizationApiLogin.strategy";
+import { OrganizationApiLogInStrategy } from "../misc/logInStrategies/organizationapilogin.strategy";
 import { PasswordLogInStrategy } from "../misc/logInStrategies/passwordLogin.strategy";
 import { PasswordlessLogInStrategy } from "../misc/logInStrategies/passwordlessLogin.strategy";
 import { SsoLogInStrategy } from "../misc/logInStrategies/ssoLogin.strategy";
-import { UserApiLogInStrategy } from "../misc/logInStrategies/userApiLogin.strategy";
+import { UserApiLogInStrategy } from "../misc/logInStrategies/userapilogin.strategy";
 import { AuthResult } from "../models/domain/auth-result";
 import {
   UserApiLogInCredentials,
