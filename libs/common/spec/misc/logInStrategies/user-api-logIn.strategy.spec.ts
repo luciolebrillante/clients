@@ -12,13 +12,13 @@ import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUti
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { TokenService } from "@bitwarden/common/abstractions/token.service";
 import { TwoFactorService } from "@bitwarden/common/abstractions/twoFactor.service";
-import { OrganizationApiLogInStrategy } from "@bitwarden/common/misc/logInStrategies/organizationApiLogin.strategy";
+import { UserApiLogInStrategy } from "@bitwarden/common/misc/logInStrategies/user-api-login.strategy";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { OrganizationApiLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
+import { UserApiLogInCredentials } from "@bitwarden/common/models/domain/log-in-credentials";
 
 import { identityTokenResponseFactory } from "./logIn.strategy.spec";
 
-describe("OrganizationApiLogInStrategy", () => {
+describe("UserApiLogInStrategy", () => {
   let cryptoService: SubstituteOf<CryptoService>;
   let apiService: SubstituteOf<ApiService>;
   let tokenService: SubstituteOf<TokenService>;
@@ -31,8 +31,8 @@ describe("OrganizationApiLogInStrategy", () => {
   let stateService: SubstituteOf<StateService>;
   let twoFactorService: SubstituteOf<TwoFactorService>;
 
-  let apiLogInStrategy: OrganizationApiLogInStrategy;
-  let credentials: OrganizationApiLogInCredentials;
+  let apiLogInStrategy: UserApiLogInStrategy;
+  let credentials: UserApiLogInCredentials;
 
   const deviceId = Utils.newGuid();
   const keyConnectorUrl = "KEY_CONNECTOR_URL";
@@ -55,7 +55,7 @@ describe("OrganizationApiLogInStrategy", () => {
     appIdService.getAppId().resolves(deviceId);
     tokenService.getTwoFactorToken().resolves(null);
 
-    apiLogInStrategy = new OrganizationApiLogInStrategy(
+    apiLogInStrategy = new UserApiLogInStrategy(
       cryptoService,
       apiService,
       tokenService,
@@ -69,7 +69,7 @@ describe("OrganizationApiLogInStrategy", () => {
       keyConnectorService
     );
 
-    credentials = new OrganizationApiLogInCredentials(apiClientId, apiClientSecret);
+    credentials = new UserApiLogInCredentials(apiClientId, apiClientSecret);
   });
 
   it("sends api key credentials to the server", async () => {
@@ -89,6 +89,16 @@ describe("OrganizationApiLogInStrategy", () => {
         );
       })
     );
+  });
+
+  it("sets the local environment after a successful login", async () => {
+    apiService.postIdentityToken(Arg.any()).resolves(identityTokenResponseFactory());
+
+    await apiLogInStrategy.logIn(credentials);
+
+    stateService.received(1).setApiKeyClientId(apiClientId);
+    stateService.received(1).setApiKeyClientSecret(apiClientSecret);
+    stateService.received(1).addAccount(Arg.any());
   });
 
   it("gets and sets the Key Connector key from environmentUrl", async () => {
