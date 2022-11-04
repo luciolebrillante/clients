@@ -23,8 +23,10 @@ export class OrganizationRedirectGuard implements CanActivate {
       }
       return this.router.createUrlTree([state.url, ...redirectPath]);
     }
-    return canAccessOrgAdmin(org)
-      ? this.router.createUrlTree(["/organizations", org.id])
-      : this.router.createUrlTree(["/"]);
+
+    if (canAccessOrgAdmin(org)) {
+      return this.router.createUrlTree(["/organizations", org.id]);
+    }
+    return this.router.createUrlTree(["/"]);
   }
 }

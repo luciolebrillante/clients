@@ -55,25 +55,22 @@ const routes: Routes = [
 ];
 
 function getSettingsRoute(organization: Organization) {
-  let route: string | string[];
-  switch (true) {
-    case organization.isOwner:
-      route = "account";
-      break;
-    case organization.canManagePolicies:
-      route = "policies";
-      break;
-    case organization.canAccessImportExport:
-      route = ["tools", "import"];
-      break;
-    case organization.canManageSso:
-      route = "sso";
-      break;
-    case organization.canManageScim:
-      route = "scim";
-      break;
+  if (organization.isOwner) {
+    return "account";
   }
-  return route;
+  if (organization.canManagePolicies) {
+    return "policies";
+  }
+  if (organization.canAccessImportExport) {
+    return ["tools", "import"];
+  }
+  if (organization.canManageSso) {
+    return "sso";
+  }
+  if (organization.canManageScim) {
+    return "scim";
+  }
+  return undefined;
 }
 
 @NgModule({

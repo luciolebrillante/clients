@@ -101,19 +101,16 @@ const routes: Routes = [
 ];
 
 function getManageRoute(organization: Organization): string {
-  let route: string;
-  switch (true) {
-    case organization.canManageUsers:
-      route = "members";
-      break;
-    case organization.canViewAssignedCollections || organization.canViewAllCollections:
-      route = "collections";
-      break;
-    case organization.canManageGroups:
-      route = "groups";
-      break;
+  if (organization.canManageUsers) {
+    return "members";
   }
-  return route;
+  if (organization.canViewAssignedCollections || organization.canViewAllCollections) {
+    return "collections";
+  }
+  if (organization.canManageGroups) {
+    return "groups";
+  }
+  return undefined;
 }
 
 @NgModule({

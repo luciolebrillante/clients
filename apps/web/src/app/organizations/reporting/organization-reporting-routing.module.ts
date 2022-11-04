@@ -91,16 +91,13 @@ const routes: Routes = [
 ];
 
 function getReportRoute(organization: Organization): string {
-  let route: string;
-  switch (true) {
-    case organization.canAccessEventLogs:
-      route = "events";
-      break;
-    case organization.canAccessReports:
-      route = "reports";
-      break;
+  if (organization.canAccessEventLogs) {
+    return "events";
   }
-  return route;
+  if (organization.canAccessReports) {
+    return "reports";
+  }
+  return undefined;
 }
 
 @NgModule({
