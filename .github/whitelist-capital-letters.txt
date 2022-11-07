@@ -282,16 +282,6 @@
 ./libs/node/src/services/nodeApi.service.ts
 ./libs/node/src/services/nodeCryptoFunction.service.ts
 ./libs/node/src/services/lowdbStorage.service.ts
-./libs/electron/spec/services/electronLog.service.spec.ts
-./libs/electron/src/baseMenu.ts
-./libs/electron/src/services/electronLog.service.ts
-./libs/electron/src/services/electronStorage.service.ts
-./libs/electron/src/services/electronRendererMessaging.service.ts
-./libs/electron/src/services/electronMainMessaging.service.ts
-./libs/electron/src/services/electronPlatformUtils.service.ts
-./libs/electron/src/services/electronRendererStorage.service.ts
-./libs/electron/src/services/electronCrypto.service.ts
-./libs/electron/src/services/electronRendererSecureStorage.service.ts
 ./README.md
 ./LICENSE_BITWARDEN.txt
 ./CONTRIBUTING.md
