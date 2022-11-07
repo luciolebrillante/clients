@@ -609,7 +609,7 @@
     "message": "Le mot de passe maître est le mot de passe que vous utilisez pour accéder à votre coffre. Il est très important de ne pas l'oublier. Il n'existe aucun moyen de le récupérer si vous le perdez."
   },
   "masterPassImportant": {
-    "message": "Le mot de passe maître ne peut pas être récupérés si vous l'oubliez!"
+    "message": "Le mot de passe maître ne peut pas être récupéré si vous l'oubliez!"
   },
   "masterPassHintDesc": {
     "message": "Un indice de mot de passe maître peut vous aider à vous rappeler de votre mot de passe en cas d'oubli."
@@ -694,7 +694,7 @@
     "message": "Mot de passe de fichier invalide, veuillez utiliser le mot de passe que vous avez entré lorsque vous avez créé le fichier d'exportation."
   },
   "lockNow": {
-    "message": "Vérrouiller maintenant"
+    "message": "Verrouiller maintenant"
   },
   "noItemsInList": {
     "message": "Aucun élément à afficher."
@@ -942,7 +942,7 @@
     "message": "Protégé par Mot de Passe"
   },
   "filePasswordAndConfirmFilePasswordDoNotMatch": {
-    "message": "Le \"Mot de Passe\" et le \"Mot de Passe Confirmé\" ne correspondent pas."
+    "message": "Le \"Mot de Passe\" et le \"Mot de Passe confirmé\" ne correspondent pas."
   },
   "confirmVaultImport": {
     "message": "Confirmer l'Importation du Coffre"
@@ -1270,7 +1270,7 @@
     "message": "Nouveau domaine personnalisé"
   },
   "newCustomDomainDesc": {
-    "message": "Entrez une liste de domaines séparés par des virgules. Seuls les domaines « de base » sont autorisés. N’entrez pas de sous-domaines. Par exemple, entrez « google.com » au lieu de « www.google.com ». Vous pouvez également entrer « androidapp://package.name » pour associer une application android avec d’autres domaines de sites web."
+    "message": "Entrez une liste de domaines séparés par des virgules. Seuls les domaines « de base » sont autorisés. N’entrez pas de sous-domaines. Par exemple, entrez « google.com » au lieu de « www.google.com ». Vous pouvez également entrer « androidapp://package.name » pour associer une application Android avec d’autres domaines de sites web."
   },
   "customDomainX": {
     "message": "Domaine personnalisé $INDEX$",
@@ -2041,7 +2041,7 @@
     "message": "Contacter le support client"
   },
   "updatedPaymentMethod": {
-    "message": "Moyen de paiement mise à jour."
+    "message": "Moyen de paiement mis à jour."
   },
   "purchasePremium": {
     "message": "Acheter Premium"
@@ -3210,7 +3210,7 @@
     "message": "La suppression de licences utilisateur entraînera des ajustements sur vos totaux de facturation qui seront calculés au prorata et portés au crédit de votre prochaine facturation."
   },
   "adjustedSeats": {
-    "message": "$AMOUNT$ licences utilisateurs mis à jour.",
+    "message": "$AMOUNT$ licences utilisateurs mises à jour.",
     "placeholders": {
       "amount": {
         "content": "$1",
@@ -3234,7 +3234,7 @@
     "message": "Nous sommes passés à des clés de chiffrement plus longues qui fournissent une meilleure sécurité et permettent l'accès à de nouvelles fonctionnalités. La mise à jour de votre clé de chiffrement est rapide et facile. Tapez simplement votre mot de passe maître ci-dessous. Cette mise à jour deviendra peut-être obligatoire."
   },
   "updateEncryptionKeyWarning": {
-    "message": "Après avoir mis à jour votre clé de chiffrement, vous devrez vous reconnecter sur toutes les applications Bitwarden que vous utilisez actuellement (comme par exemple l'application mobile ou les extensions de navigateur). Le fait de ne pas vous déconnecter et de vous reconnecter (ce qui télécharge votre nouvelle clé de chiffrement) pourrait entraîner une corruption des données. Nous allons essayer de vous déconnecter automatiquement, mais cela demande un peu de temps."
+    "message": "Après avoir mis à jour votre clé de chiffrement, vous devrez vous reconnecter sur toutes les applications Bitwarden que vous utilisez actuellement (par exemple avec l'application mobile ou les extensions de navigateur). Le fait de ne pas vous déconnecter et de vous reconnecter (ce qui télécharge votre nouvelle clé de chiffrement) pourrait entraîner une corruption des données. Nous allons essayer de vous déconnecter automatiquement, mais cela demande un peu de temps."
   },
   "updateEncryptionKeyExportWarning": {
     "message": "Tous les exports chiffrés que vous avez enregistrés deviendront également invalides."
@@ -4118,7 +4118,7 @@
     "message": "Gérer les collections assignées"
   },
   "editAssignedCollections": {
-    "message": "Modifier les collection assignées"
+    "message": "Modifier les collections assignées"
   },
   "deleteAssignedCollections": {
     "message": "Supprimer les collections assignées"
@@ -4409,7 +4409,7 @@
     "message": "Êtes-vous sûr de vouloir supprimer les utilisateurs suivants ? Le processus peut prendre quelques secondes et ne peut être interrompu ou annulé."
   },
   "removeOrgUsersConfirmation": {
-    "message": "Lorsque les membres sont supprimés, ils n'ont plus accès aux données de l'organisation et cette action est irréversible. Pour ajouter de nouveau ces membres à l'organisation, ils doivent être invités et inscrit à nouveau. Le processus peut prendre quelques secondes et ne peut pas être interrompu ou annulé."
+    "message": "Lorsque les membres sont supprimés, ils n'ont plus accès aux données de l'organisation et cette action est irréversible. Pour ajouter de nouveau ces membres à l'organisation, ils doivent être invités et inscrits à nouveau. Le processus peut prendre quelques secondes et ne peut pas être interrompu ou annulé."
   },
   "revokeUsersWarning": {
     "message": "Lorsque les membres sont révoqués, ils n'ont plus accès aux données de l'organisation. Pour restaurer rapidement l'accès des membres, allez dans l'onglet Révoqué. Le processus peut prendre quelques secondes et ne peut pas être interrompu ou annulé."
@@ -4810,7 +4810,7 @@
     "message": "Si vous quittez ou que vous êtes retiré de l'organisation marraine, votre forfait Familles expirera à la fin de la période de facturation."
   },
   "acceptBitwardenFamiliesHelp": {
-    "message": "Acceptez l'offre pour une organisation existante ou créer une nouvelle organisation Familles."
+    "message": "Acceptez l'offre pour une organisation existante ou créez une nouvelle organisation Familles."
   },
   "setupSponsoredFamiliesLoginDesc": {
     "message": "Vous avez reçu un abonnement gratuit pour une organisation Bitwarden Familles. Pour continuer, vous devez vous connecter au compte qui a reçu l'offre."
@@ -4933,7 +4933,7 @@
     "message": "Autoriser l'authentification SSO"
   },
   "allowSsoDesc": {
-    "message": "Une fois configuré, votre configuration sera enregistrée et les membres seront en mesure de s'authentifier en utilisant leurs identifiants de l'Identity Provider."
+    "message": "Une fois configurée, votre configuration sera enregistrée et les membres seront en mesure de s'authentifier en utilisant leurs identifiants de l'Identity Provider."
   },
   "ssoPolicyHelpStart": {
     "message": "Activer la",
@@ -5035,7 +5035,7 @@
     "message": "Générer le Jeton"
   },
   "rotateToken": {
-    "message": "Permiter le Jeton"
+    "message": "Permuter le Jeton"
   },
   "rotateBillingSyncTokenWarning": {
     "message": "Si vous continuez, vous devrez reconfigurer la synchronisation de facturation sur votre serveur auto-hébergé."
@@ -5209,7 +5209,7 @@
     "description": "Generates domain-based username using random letters"
   },
   "randomWord": {
-    "message": "Mot Aléatoire"
+    "message": "Mot aléatoire"
   },
   "service": {
     "message": "Service"
@@ -5309,7 +5309,7 @@
     "description": "The text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimDescription": {
-    "message": "Fournit automatiquement aux utilisateurs et aux groupes votre fournisseur d'identité préféré via l'approvisionnement SCIM",
+    "message": "Fournis automatiquement aux utilisateurs et aux groupes votre fournisseur d'identité préféré via l'approvisionnement SCIM",
     "description": "the text, 'SCIM', is an acronymn and should not be translated."
   },
   "scimEnabledCheckboxDesc": {
