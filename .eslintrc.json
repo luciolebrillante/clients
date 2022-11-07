@@ -131,12 +131,6 @@
       "rules": {
         "no-restricted-imports": ["error", { "patterns": ["@bitwarden/node/*", "src/**/*"] }]
       }
-    },
-    {
-      "files": ["libs/electron/src/**/*.ts"],
-      "rules": {
-        "no-restricted-imports": ["error", { "patterns": ["@bitwarden/electron/*", "src/**/*"] }]
-      }
     }
   ]
 }
