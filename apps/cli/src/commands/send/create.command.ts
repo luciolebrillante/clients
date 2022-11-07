@@ -6,8 +6,8 @@ import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
 import { SendType } from "@bitwarden/common/enums/sendType";
 import { NodeUtils } from "@bitwarden/common/misc/nodeUtils";
-import { Response } from "@bitwarden/node/cli/models/response";
 
+import { Response } from "../../models/response";
 import { SendResponse } from "../../models/response/sendResponse";
 import { SendTextResponse } from "../../models/response/sendTextResponse";
 import { CliUtils } from "../../utils";

@@ -13,12 +13,12 @@ import {
 } from "@bitwarden/common/models/response/collection.response";
 import { ListResponse as ApiListResponse } from "@bitwarden/common/models/response/list.response";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
-import { Response } from "@bitwarden/node/cli/models/response";
-import { ListResponse } from "@bitwarden/node/cli/models/response/listResponse";
 
+import { Response } from "../models/response";
 import { CipherResponse } from "../models/response/cipherResponse";
 import { CollectionResponse } from "../models/response/collectionResponse";
 import { FolderResponse } from "../models/response/folderResponse";
+import { ListResponse } from "../models/response/list.response";
 import { OrganizationResponse } from "../models/response/organizationResponse";
 import { OrganizationUserResponse } from "../models/response/organizationUserResponse";
 import { CliUtils } from "../utils";

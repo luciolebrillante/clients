@@ -1,17 +1,15 @@
 import * as fetch from "node-fetch";
 
-import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { PlatformUtilsService } from "@bitwarden/common/abstractions/platformUtils.service";
 
 import { Response } from "../models/response";
-import { MessageResponse } from "../models/response/messageResponse";
+import { MessageResponse } from "../models/response/message.response";
 
 export class UpdateCommand {
   inPkg = false;
 
   constructor(
     private platformUtilsService: PlatformUtilsService,
-    private i18nService: I18nService,
     private repoName: string,
     private executableName: string,
     private showExtendedMessage: boolean

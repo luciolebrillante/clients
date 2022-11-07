@@ -1,9 +1,9 @@
 import * as fs from "fs";
 import * as path from "path";
 
-import { I18nService as BaseI18nService } from "@bitwarden/common/services/i18n.service";
+import { I18nService } from "@bitwarden/common/services/i18n.service";
 
-export class I18nService extends BaseI18nService {
+export class CliI18nService extends I18nService {
   constructor(systemLanguage: string, localesDirectory: string) {
     super(systemLanguage, localesDirectory, (formattedLocale: string) => {
       const filePath = path.join(

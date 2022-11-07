@@ -1,6 +1,6 @@
 import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
-import { Response } from "@bitwarden/node/cli/models/response";
 
+import { Response } from "../models/response";
 import { CipherResponse } from "../models/response/cipherResponse";
 import { CliUtils } from "../utils";
 

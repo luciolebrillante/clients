@@ -6,8 +6,8 @@ import { SearchService } from "@bitwarden/common/abstractions/search.service";
 import { SendService } from "@bitwarden/common/abstractions/send.service";
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SendView } from "@bitwarden/common/models/view/send.view";
-import { Response } from "@bitwarden/node/cli/models/response";
 
+import { Response } from "../../models/response";
 import { SendResponse } from "../../models/response/sendResponse";
 import { DownloadCommand } from "../download.command";
 

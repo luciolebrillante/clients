@@ -49,15 +49,15 @@ import { UserVerificationApiService } from "@bitwarden/common/services/userVerif
 import { UserVerificationService } from "@bitwarden/common/services/userVerification/userVerification.service";
 import { VaultTimeoutService } from "@bitwarden/common/services/vaultTimeout/vaultTimeout.service";
 import { VaultTimeoutSettingsService } from "@bitwarden/common/services/vaultTimeout/vaultTimeoutSettings.service";
-import { CliPlatformUtilsService } from "@bitwarden/node/cli/services/cliPlatformUtils.service";
-import { ConsoleLogService } from "@bitwarden/node/cli/services/consoleLog.service";
-import { NodeApiService } from "@bitwarden/node/services/nodeApi.service";
-import { NodeCryptoFunctionService } from "@bitwarden/node/services/nodeCryptoFunction.service";
 
 import { Program } from "./program";
 import { SendProgram } from "./send.program";
-import { I18nService } from "./services/i18n.service";
-import { LowdbStorageService } from "./services/lowdbStorage.service";
+import { CliConsoleLogService } from "./services/cli-console-log.service";
+import { CliI18nService } from "./services/cli-i18n.service";
+import { CliPlatformUtilsService } from "./services/cli-platform-utils.service";
+import { LowdbStorageService } from "./services/lowdb-storage.service";
+import { NodeApiService } from "./services/node-api.service";
+import { NodeCryptoFunctionService } from "./services/node-crypto-function.service";
 import { NodeEnvSecureStorageService } from "./services/nodeEnvSecureStorage.service";
 import { VaultProgram } from "./vault.program";
 
@@ -72,7 +72,7 @@ export class Main {
   storageService: LowdbStorageService;
   secureStorageService: NodeEnvSecureStorageService;
   memoryStorageService: MemoryStorageService;
-  i18nService: I18nService;
+  i18nService: CliI18nService;
   platformUtilsService: CliPlatformUtilsService;
   cryptoService: CryptoService;
   tokenService: TokenService;
@@ -100,7 +100,7 @@ export class Main {
   program: Program;
   vaultProgram: VaultProgram;
   sendProgram: SendProgram;
-  logService: ConsoleLogService;
+  logService: CliConsoleLogService;
   sendService: SendService;
   fileUploadService: FileUploadService;
   keyConnectorService: KeyConnectorService;
@@ -133,9 +133,9 @@ export class Main {
       p = path.join(process.env.HOME, ".config/Bitwarden CLI");
     }
 
-    this.i18nService = new I18nService("en", "./locales");
+    this.i18nService = new CliI18nService("en", "./locales");
     this.platformUtilsService = new CliPlatformUtilsService(ClientType.Cli, packageJson);
-    this.logService = new ConsoleLogService(
+    this.logService = new CliConsoleLogService(
       this.platformUtilsService.isDev(),
       (level) => process.env.BITWARDENCLI_DEBUG !== "true" && level <= LogLevelType.Info
     );

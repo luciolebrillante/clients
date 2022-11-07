@@ -1,9 +1,9 @@
 import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { CipherWithIdExport } from "@bitwarden/common/models/export/cipher-with-ids.export";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
-import { BaseResponse } from "@bitwarden/node/cli/models/response/baseResponse";
 
 import { AttachmentResponse } from "./attachmentResponse";
+import { BaseResponse } from "./base.response";
 import { LoginResponse } from "./loginResponse";
 import { PasswordHistoryResponse } from "./passwordHistoryResponse";
 

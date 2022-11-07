@@ -1,6 +1,7 @@
 import { Utils } from "@bitwarden/common/misc/utils";
 import { SymmetricCryptoKey } from "@bitwarden/common/models/domain/symmetric-crypto-key";
-import { NodeCryptoFunctionService } from "@bitwarden/node/services/nodeCryptoFunction.service";
+
+import { NodeCryptoFunctionService } from "./node-crypto-function.service";
 
 const RsaPublicKey =
   "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl0Vawl/toXzkEvB82FEtqHP" +

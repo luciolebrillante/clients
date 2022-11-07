@@ -3,12 +3,8 @@ import * as program from "commander";
 
 import { AuthenticationStatus } from "@bitwarden/common/enums/authenticationStatus";
 import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
-import { BaseProgram } from "@bitwarden/node/cli/baseProgram";
-import { LogoutCommand } from "@bitwarden/node/cli/commands/logout.command";
-import { UpdateCommand } from "@bitwarden/node/cli/commands/update.command";
-import { Response } from "@bitwarden/node/cli/models/response";
-import { MessageResponse } from "@bitwarden/node/cli/models/response/messageResponse";
 
+import { BaseProgram } from "./base-program";
 import { Main } from "./bw";
 import { CompletionCommand } from "./commands/completion.command";
 import { ConfigCommand } from "./commands/config.command";
@@ -16,10 +12,14 @@ import { EncodeCommand } from "./commands/encode.command";
 import { GenerateCommand } from "./commands/generate.command";
 import { LockCommand } from "./commands/lock.command";
 import { LoginCommand } from "./commands/login.command";
+import { LogoutCommand } from "./commands/logout.command";
 import { ServeCommand } from "./commands/serve.command";
 import { StatusCommand } from "./commands/status.command";
 import { SyncCommand } from "./commands/sync.command";
 import { UnlockCommand } from "./commands/unlock.command";
+import { UpdateCommand } from "./commands/update.command";
+import { Response } from "./models/response";
+import { MessageResponse } from "./models/response/message.response";
 import { TemplateResponse } from "./models/response/templateResponse";
 import { CliUtils } from "./utils";
 
@@ -143,10 +143,10 @@ export class Program extends BaseProgram {
           const command = new LoginCommand(
             this.main.authService,
             this.main.apiService,
-            this.main.cryptoFunctionService,
             this.main.i18nService,
             this.main.environmentService,
             this.main.passwordGenerationService,
+            this.main.cryptoFunctionService,
             this.main.platformUtilsService,
             this.main.stateService,
             this.main.cryptoService,
@@ -174,7 +174,6 @@ export class Program extends BaseProgram {
         await this.exitIfNotAuthed();
         const command = new LogoutCommand(
           this.main.authService,
-          this.main.i18nService,
           async () => await this.main.logout()
         );
         const response = await command.run();
@@ -196,7 +195,6 @@ export class Program extends BaseProgram {
         if (await this.main.keyConnectorService.getUsesKeyConnector()) {
           const logoutCommand = new LogoutCommand(
             this.main.authService,
-            this.main.i18nService,
             async () => await this.main.logout()
           );
           await logoutCommand.run();
@@ -405,13 +403,7 @@ export class Program extends BaseProgram {
         writeLn("", true);
       })
       .action(async () => {
-        const command = new UpdateCommand(
-          this.main.platformUtilsService,
-          this.main.i18nService,
-          "cli",
-          "bw",
-          true
-        );
+        const command = new UpdateCommand(this.main.platformUtilsService, "cli", "bw", true);
         const response = await command.run();
         this.processResponse(response);
       });

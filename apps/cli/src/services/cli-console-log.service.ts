@@ -1,7 +1,7 @@
 import { LogLevelType } from "@bitwarden/common/enums/logLevelType";
-import { ConsoleLogService as BaseConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
+import { ConsoleLogService } from "@bitwarden/common/services/consoleLog.service";
 
-export class ConsoleLogService extends BaseConsoleLogService {
+export class CliConsoleLogService extends ConsoleLogService {
   constructor(isDev: boolean, filter: (level: LogLevelType) => boolean = null) {
     super(isDev, filter);
   }

@@ -1,15 +1,18 @@
-import { ConsoleLogService } from "@bitwarden/node/cli/services/consoleLog.service";
+import {
+  interceptConsole,
+  restoreConsole,
+} from "../../../../libs/common/spec/shared/interceptConsole";
 
-import { interceptConsole, restoreConsole } from "../../../common/spec/shared/interceptConsole";
+import { CliConsoleLogService } from "./cli-console-log.service";
 
 let caughtMessage: any = {};
 
 describe("CLI Console log service", () => {
-  let logService: ConsoleLogService;
+  let logService: CliConsoleLogService;
   beforeEach(() => {
     caughtMessage = {};
     interceptConsole(caughtMessage);
-    logService = new ConsoleLogService(true);
+    logService = new CliConsoleLogService(true);
   });
 
   afterAll(() => {

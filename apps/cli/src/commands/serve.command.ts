@@ -7,10 +7,10 @@ import * as koaJson from "koa-json";
 
 import { KeySuffixOptions } from "@bitwarden/common/enums/keySuffixOptions";
 import { Utils } from "@bitwarden/common/misc/utils";
-import { Response } from "@bitwarden/node/cli/models/response";
-import { FileResponse } from "@bitwarden/node/cli/models/response/fileResponse";
 
 import { Main } from "../bw";
+import { Response } from "../models/response";
+import { FileResponse } from "../models/response/file.response";
 
 import { ConfirmCommand } from "./confirm.command";
 import { CreateCommand } from "./create.command";

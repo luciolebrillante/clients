@@ -13,9 +13,9 @@ import { CollectionExport } from "@bitwarden/common/models/export/collection.exp
 import { FolderExport } from "@bitwarden/common/models/export/folder.export";
 import { CollectionRequest } from "@bitwarden/common/models/request/collection.request";
 import { SelectionReadOnlyRequest } from "@bitwarden/common/models/request/selection-read-only.request";
-import { Response } from "@bitwarden/node/cli/models/response";
 
 import { OrganizationCollectionRequest } from "../models/request/organizationCollectionRequest";
+import { Response } from "../models/response";
 import { CipherResponse } from "../models/response/cipherResponse";
 import { FolderResponse } from "../models/response/folderResponse";
 import { OrganizationCollectionResponse } from "../models/response/organizationCollectionResponse";

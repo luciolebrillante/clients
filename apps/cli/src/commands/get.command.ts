@@ -26,16 +26,16 @@ import { ErrorResponse } from "@bitwarden/common/models/response/error.response"
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { CollectionView } from "@bitwarden/common/models/view/collection.view";
 import { FolderView } from "@bitwarden/common/models/view/folder.view";
-import { Response } from "@bitwarden/node/cli/models/response";
-import { StringResponse } from "@bitwarden/node/cli/models/response/stringResponse";
 
 import { OrganizationCollectionRequest } from "../models/request/organizationCollectionRequest";
+import { Response } from "../models/response";
 import { CipherResponse } from "../models/response/cipherResponse";
 import { CollectionResponse } from "../models/response/collectionResponse";
 import { FolderResponse } from "../models/response/folderResponse";
 import { OrganizationCollectionResponse } from "../models/response/organizationCollectionResponse";
 import { OrganizationResponse } from "../models/response/organizationResponse";
 import { SendResponse } from "../models/response/sendResponse";
+import { StringResponse } from "../models/response/string.response";
 import { TemplateResponse } from "../models/response/templateResponse";
 import { SelectionReadOnly } from "../models/selectionReadOnly";
 import { CliUtils } from "../utils";

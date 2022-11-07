@@ -12,8 +12,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@bitwarden/common/*": ["../../libs/common/src/*"],
-      "@bitwarden/node/*": ["../../libs/node/src/*"]
+      "@bitwarden/common/*": ["../../libs/common/src/*"]
     }
   },
   "include": ["src"]
